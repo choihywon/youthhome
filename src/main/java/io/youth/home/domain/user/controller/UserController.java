@@ -10,11 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/users")//기본경로
 @RequiredArgsConstructor
-public class UesrController {
+public class UserController {
 
     private final UserService userService;
+    @PostMapping
+    public ResponseEntity<String> registerUser(@RequestBody UserRequest request) {
+        userService.register(request);
+        return ResponseEntity.ok("회원가입 성공!");
+    }
 
 
 }
