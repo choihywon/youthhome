@@ -13,13 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/users")//기본경로
 @RequiredArgsConstructor
 public class UserController {
-
     private final UserService userService;
     @PostMapping
     public ResponseEntity<String> registerUser(@RequestBody UserRequest request) {
         userService.register(request);
         return ResponseEntity.ok("회원가입 성공!");
     }
-
-
 }
