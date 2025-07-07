@@ -17,7 +17,7 @@ public class UserService {
 
     public void register(UserRequest request) {
         if (userRepository.existsByEmail(request.email())) {
-            throw new UserException.UserEmailAlreadyExistsException(); // 예외 발생
+            throw new UserException.UserEmailAlreadyExistsException();
         }
         User user = User.builder()
                 .email(request.email())
