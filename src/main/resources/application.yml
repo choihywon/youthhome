@@ -1,6 +1,9 @@
 spring:
   application:
     name: home
+  jwt:
+    secret: your-very-long-32byte-jwt-secret-key-here
+
 
   datasource:
     url: jdbc:h2:mem:testdb
@@ -34,3 +37,5 @@ logging:
 #    password: ${PASSWORD}
 #    driver-class-name: org.postgresql.Driver
 #
+
+
